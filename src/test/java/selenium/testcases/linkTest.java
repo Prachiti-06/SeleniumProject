@@ -1,4 +1,4 @@
-package testcase;
+package selenium.testcases;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -10,7 +10,6 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 
 /**
  *
@@ -45,7 +44,6 @@ public class linkTest {
     public void checkUrl(String url) {
         if (url == null || url == "") {
             System.out.println("Url is empty");
-            Assert.fail();
         }
 
         try {
@@ -56,16 +54,14 @@ public class linkTest {
             int respCode = httpconnection.getResponseCode();
 
             if (respCode >= 400) {
-                Assert.fail();
+                System.out.println("URL test failed");
             } else {
-                System.out.println("Pass");
+                System.out.println("URL test Pass");
             }
 
         } catch (MalformedURLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 

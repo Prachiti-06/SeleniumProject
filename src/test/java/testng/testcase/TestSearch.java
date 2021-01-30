@@ -1,6 +1,6 @@
-package testcase;
+package testng.testcase;
 
-import java.util.Iterator;
+/*import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -15,28 +15,22 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import pageobject.Search;
+import pageobject.Search;*/
 
 /**
  * @author Prachiti
  */
 public class TestSearch {
-
-    WebDriver driver;
+   /* WebDriver driver;
     Search search;
-    testcase.linkTest linkTest;
-
-    /*
-     * public static void main(String[] args) { TestSearch testSearch = new
-     * TestSearch(); testSearch.setup(); testSearch.testCase1(); }
-     */
+    testng.testcase.linkTest linkTest;
 
     @BeforeTest
     public void setup() {
         System.setProperty("webdriver.chrome.driver", "C:\\chromewebdriver\\chromedriver.exe");
         driver = new ChromeDriver();
         search = new Search(driver);
-        linkTest = new testcase.linkTest(driver);
+        linkTest = new linkTest(driver);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.get("https://www.ratioform.at/");
@@ -179,5 +173,5 @@ public class TestSearch {
 	@AfterClass
 	public void afterClass() {
 		driver.close();
-	}
+	}*/
 }

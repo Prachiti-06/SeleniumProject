@@ -19,3 +19,7 @@ To use this project, need to install the following applications:
 4.	Note down the chrome driver path from local and add the local path of ChromeDriver to System property in the program. 
 `System.setProperty("webdriver.chrome.driver", "C:\\chromewebdriver\\chromedriver.exe")`
 5.	Download Jars and add in Path or add maven dependencies.
+
+## Command Required to run the Automation test
+1. Using Selenium : `mvn test -Pselenium`
+2. Using TestNG : `mvn test`
