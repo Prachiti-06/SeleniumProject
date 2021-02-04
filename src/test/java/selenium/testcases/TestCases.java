@@ -25,7 +25,8 @@ public class TestCases {
 
     /* to open ratioform website on Chrome driver*/
     public void setup() {
-        System.setProperty("webdriver.chrome.driver", "C:\\chromewebdriver\\chromedriver.exe");
+       // System.setProperty("webdriver.chrome.driver", "C:\\chromewebdriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
         driver = new ChromeDriver();
         search = new Search(driver);
         linkTest = new linkTest(driver);
