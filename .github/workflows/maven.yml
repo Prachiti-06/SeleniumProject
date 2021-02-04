@@ -23,7 +23,9 @@ jobs:
    # - name: Build with Maven
    #   run: mvn -B package --file pom.xml
     - name: pwd command
-      run: pwd
+      run: |
+        pwd
+        ls -lrt
     - name: Install Google Chrome # Using shell script to install Google Chrome
       run: |
        chmod +x ./InstallChromeBrowser.sh
@@ -35,5 +37,7 @@ jobs:
     - run: |
         export DISPLAY=:99
         chromedriver --url-base=/wd/hub &
+        pwd
+        ls -lrt
     - name: Run with Maven
       run: mvn test -Pselenium
