@@ -28,8 +28,8 @@ jobs:
         ls -lrt
     - name: Install Google Chrome # Using shell script to install Google Chrome
       run: |
-       cd ../..
        chmod +x ./InstallChromeBrowser.sh
+       cd ../..
        cd /usr/bin/google-chrome
        pwd
        ls -lrt
@@ -50,4 +50,4 @@ jobs:
         pwd
         ls -lrt
     - name: Run with Maven
-      run: mvn test -Pselenium
+    #  run: mvn test -Pselenium
