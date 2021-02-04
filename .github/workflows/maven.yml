@@ -22,9 +22,12 @@ jobs:
         java-version: 1.8
    # - name: Build with Maven
    #   run: mvn -B package --file pom.xml
+    - name: pwd command
+      run: pwd
     - name: Install Google Chrome # Using shell script to install Google Chrome
       run: |
        chmod +x ./InstallChromeBrowser.sh
+       pwd
     - uses: nanasess/setup-chromedriver@master
      # with:
     # Optional: do not specify to match Chrome's version
