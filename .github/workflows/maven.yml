@@ -25,7 +25,6 @@ jobs:
     - name: Install Google Chrome # Using shell script to install Google Chrome
       run: |
        chmod +x ./InstallChromeBrowser.sh
-       mv google-chrome-stable_current_amd64 /usr/bin/google-chrome
     - uses: nanasess/setup-chromedriver@master
      # with:
     # Optional: do not specify to match Chrome's version
