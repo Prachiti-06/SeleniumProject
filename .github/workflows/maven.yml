@@ -25,6 +25,12 @@ jobs:
     - name: Install Google Chrome # Using shell script to install Google Chrome
       run: |
        chmod +x ./InstallChromeBrowser.sh
-    #- uses: actions/setup-chromedriver@v1.0.1
+    - uses: nanasess/setup-chromedriver@master
+      with:
+    # Optional: do not specify to match Chrome's version
+        chromedriver-version: '88.0.4324.96'
+    - run: |
+        export DISPLAY=:99
+        chromedriver --url-base=/wd/hub &
     - name: Run with Maven
       run: mvn test -Pselenium
