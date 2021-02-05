@@ -34,7 +34,9 @@ jobs:
        pwd
        ls -lrt
        cd ../..
-       cd /usr/bin/google-chrome
+       cd /usr
+       ls -lrt
+       cd /bin
        pwd
        ls -lrt
     - name: pwd command2
