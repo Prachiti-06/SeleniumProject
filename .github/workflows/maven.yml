@@ -28,7 +28,11 @@ jobs:
         ls -lrt
     - name: Install Google Chrome # Using shell script to install Google Chrome
       run: |
-       chmod +x ./InstallChromeBrowser.sh
+       set -ex
+       wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+       sudo apt install ./google-chrome-stable_current_amd64.deb
+       pwd
+       ls -lrt
        cd ../..
        cd /usr/bin/google-chrome
        pwd
