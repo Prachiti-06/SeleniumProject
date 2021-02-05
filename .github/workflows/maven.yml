@@ -37,12 +37,18 @@ jobs:
        cd /usr
        ls -lrt
        cd /bin
-       pwd
+       mkdir google-chrome
+       cd ../..
+       cd /home/runner/work/SeleniumProject_RF/SeleniumProject_RF
+       mv google-chrome-stable_current_amd64.deb /usr/bin/google-chrome
+       cd ../..
+       cd /usr/bin/google-chrome
        ls -lrt
     - name: pwd command2
       run: |
         cd ../..
-        mkdir -p /usr/local/bin/chromedriver
+        cd /usr/local/bin
+        mkdir /chromedriver
         pwd
     - uses: nanasess/setup-chromedriver@master
      # with:
