@@ -50,4 +50,4 @@ jobs:
         pwd
         ls -lrt
     - name: Run with Maven
-    #  run: mvn test -Pselenium
+      run: mvn test -Pselenium
