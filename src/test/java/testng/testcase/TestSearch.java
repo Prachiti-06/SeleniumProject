@@ -56,7 +56,7 @@ public class TestSearch {
         submitBtn.click();
         System.out.println("Current URL is:" + driver.getCurrentUrl());
         Assert.assertTrue(driver.getCurrentUrl().contains("secure"));
-	    System.out.println("passed tc_search1");
+	    System.out.println("passed tc_search 1");
 	/*String productName = "wellpapp";
         search.searchproduct(productName);
         WebElement actual = driver.findElement(By.xpath("//div[@class='suggest-search__box']"));
@@ -68,7 +68,7 @@ public class TestSearch {
     public void tc_Search_2() {
         driver.findElement(By.name("searchQuery")).sendKeys("wellpapp");
        // driver.findElement(By.cssSelector("(button[type='submit']")).click();
-         System.out.println("passed tc_search2");
+         System.out.println("passed tc_search 2");
 	/*search.searchproduct(productName);
         driver.findElement(By.xpath(
                 "//html//body//div[2]//header-tag//div[2]//div[1]//div//div[1]//search-form//form//suggest-search//div//div//div//div//div[2]//a"))
