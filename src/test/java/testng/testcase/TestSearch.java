@@ -47,11 +47,15 @@ public class TestSearch {
 
     @Test(priority = 1)
     public void tc_Search_1() {
-        String productName = "wellpapp";
+         driver.get("https://www.google.com/");
+	/* driver.findElement(By.xpath("//*[@id=\"input\"]")).sendKeys("Facebook");
+        Actions act = new Actions(driver);
+        act.sendKeys(Keys.ENTER).build().perform();  */ 
+	/*String productName = "wellpapp";
         search.searchproduct(productName);
         WebElement actual = driver.findElement(By.xpath("//div[@class='suggest-search__box']"));
         Assert.assertEquals(actual.getText().contains("Produkte"), true);
-        search.getSearch().clear();
+        search.getSearch().clear();*/
     }
 /*
     @Test(priority = 2)
