@@ -67,7 +67,7 @@ public class TestSearch {
     @Test(priority = 2)
     public void tc_Search_2() {
 	    driver.get("https://www.ratioform.at");
-        driver.findElement(By.name("searchQuery")).sendKeys("wellpapp");
+       // driver.findElement(By.name("searchQuery")).sendKeys("wellpapp");
         driver.findElement(By.className("search-placeholder")).click();
          System.out.println("passed tc_search 2");
 	/*search.searchproduct(productName);
