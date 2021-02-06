@@ -35,7 +35,7 @@ public class TestCases {
          chromeOptions.addArguments("--headless");
          chromeOptions.addArguments("--no-sandbox");
  
-        WebDriver driver = new ChromeDriver(chromeOptions);
+        driver = new ChromeDriver(chromeOptions);
         search = new Search(driver);
         linkTest = new linkTest(driver);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
