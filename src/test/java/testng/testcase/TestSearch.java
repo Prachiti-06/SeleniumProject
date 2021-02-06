@@ -56,6 +56,7 @@ public class TestSearch {
         submitBtn.click();
         System.out.println("Current URL is:" + driver.getCurrentUrl());
         Assert.assertTrue(driver.getCurrentUrl().contains("secure"));
+	    System.out.println("passed tc_search1");
 	    //driver.get("https://www.google.com/");
 	/* driver.findElement(By.xpath("//*[@id=\"input\"]")).sendKeys("Facebook");
         Actions act = new Actions(driver);
@@ -128,7 +129,6 @@ public class TestSearch {
         }
         search.getSearch().clear();
     }
-*/
      @Test(priority = 7)
     public void tc_Search_7() {
         String placeholder =
@@ -137,7 +137,7 @@ public class TestSearch {
         String actplaceholder = "Suchbegriff, Produktname, Artikelnummer...";
         Assert.assertEquals(placeholder.contains(actplaceholder), true);
     }
-/*
+
     @Test(priority = 8)
     public void tc_Search_8() {
         String productName = "%";
