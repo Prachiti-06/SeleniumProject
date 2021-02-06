@@ -42,6 +42,9 @@ public class TestCases {
         driver.manage().window().maximize();
         driver.get("https://www.ratioform.at/");
         productName = search.getProductName();
+        
+        System.out.println(productName);
+        System.out.println(search.toString());
     }
 
     /**
