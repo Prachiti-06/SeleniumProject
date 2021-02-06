@@ -1,6 +1,6 @@
 package testng.testcase;
 
-/*import java.io.IOException;
+import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -10,23 +10,23 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;*/
+import org.testng.Assert;
 
 /**
  *
  */
 
 public class linkTest {
- /*   WebDriver driver;
+    WebDriver driver;
     HttpURLConnection httpconnection = null;
 
     public linkTest(WebDriver driver) {
         this.driver = driver;
     }
 
-*//**
+/**
      *  To check each autosuggestion urls
-     *//**//*
+     *//**/
 
     public void urlTestCase() {
         List<WebElement> searchTags = driver.findElements(By.xpath("//div[@class='suggestion-product']"));
@@ -40,10 +40,10 @@ public class linkTest {
 
     }
 
-    *//*
+    /*
 *//*
      * To open http connection and receive the response header
-     *//*
+     */
 
     public void checkUrl(String url) {
         if (url == null || url == "") {
@@ -73,6 +73,6 @@ public class linkTest {
         }
 
     }
-*/
+
 
 }
