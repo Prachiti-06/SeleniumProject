@@ -20,8 +20,8 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-   # - name: Build with Maven
-   #   run: mvn -B package --file pom.xml
+    - name: Build with Maven
+      run: mvn -B package --file pom.xml
    # - uses: nanasess/setup-chromedriver@master
      # with:
     # Optional: do not specify to match Chrome's version
@@ -40,5 +40,5 @@ jobs:
   #      wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
   #      sudo apt install ./google-chrome-stable_current_amd64.deb
   #      sudo mv google-chrome-stable_current_amd64.deb /usr/bin/google-chrome
-    - name: Run with Maven
-      run: mvn test
+  #  - name: Run with Maven
+  #    run: mvn test
