@@ -30,7 +30,11 @@ public class TestCases {
         //System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
         
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        ChromeOptions chromeOptions = new ChromeOptions();
+         chromeOptions.addArguments("--headless");
+         chromeOptions.addArguments("--no-sandbox");
+ 
+        WebDriver driver = new ChromeDriver(chromeOptions);
         search = new Search(driver);
         linkTest = new linkTest(driver);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
