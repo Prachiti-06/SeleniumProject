@@ -29,5 +29,9 @@ jobs:
     - run: |
         export DISPLAY=:99
         chromedriver --url-base=/wd/hub &
+    - name: Selenium setup
+      run: |
+        wget https://selenium-release.storage.googleapis.com/3.141/selenium-server-standalone-3.141.59.jar
+       # xvfb-run java -Dwebdriver.chrome.driver=/usr/bin/chromedriver -jar selenium-server-standalone.jar
     - name: Run with Maven
       run: mvn test -Pselenium
