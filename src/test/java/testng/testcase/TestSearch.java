@@ -1,6 +1,6 @@
 package testng.testcase;
 
-/*import java.util.Iterator;
+import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -15,19 +15,22 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import pageobject.Search;*/
+import io.github.bonigarcia.wdm.WebDriverManager;
+import pageobject.Search;
 
 /**
  * @author Prachiti
  */
 public class TestSearch {
-   /* WebDriver driver;
+    WebDriver driver;
     Search search;
     testng.testcase.linkTest linkTest;
 
     @BeforeTest
     public void setup() {
-        System.setProperty("webdriver.chrome.driver", "C:\\chromewebdriver\\chromedriver.exe");
+        //System.setProperty("webdriver.chrome.driver", "C:\\chromewebdriver\\chromedriver.exe");
+	  
+	WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         search = new Search(driver);
         linkTest = new linkTest(driver);
@@ -44,7 +47,7 @@ public class TestSearch {
         Assert.assertEquals(actual.getText().contains("Produkte"), true);
         search.getSearch().clear();
     }
-
+/*
     @Test(priority = 2)
     public void tc_Search_2() {
         String productName = "wellpapp";
@@ -168,10 +171,10 @@ public class TestSearch {
         search.searchproduct(productName);
         int actual = (driver.findElements(By.xpath("//div[@class='suggestion-product']")).size());
         Assert.assertEquals(actual, 5);
-    }
+    }*/
 
 	@AfterClass
 	public void afterClass() {
-		driver.close();
-	}*/
+		driver.quit();
+	}
 }
