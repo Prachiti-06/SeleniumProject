@@ -119,7 +119,7 @@ public class TestSearch {
         }
         search.getSearch().clear();
     }
-
+*/
      @Test(priority = 7)
     public void tc_Search_7() {
         String placeholder =
@@ -128,7 +128,7 @@ public class TestSearch {
         String actplaceholder = "Suchbegriff, Produktname, Artikelnummer...";
         Assert.assertEquals(placeholder.contains(actplaceholder), true);
     }
-
+/*
     @Test(priority = 8)
     public void tc_Search_8() {
         String productName = "%";
