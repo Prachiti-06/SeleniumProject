@@ -41,4 +41,4 @@ jobs:
   #      sudo apt install ./google-chrome-stable_current_amd64.deb
   #      sudo mv google-chrome-stable_current_amd64.deb /usr/bin/google-chrome
     - name: Run with Maven
-      run: mvn test
+      run: mvn test -Pselenium
