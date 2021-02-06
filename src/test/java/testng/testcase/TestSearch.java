@@ -47,7 +47,16 @@ public class TestSearch {
 
     @Test(priority = 1)
     public void tc_Search_1() {
-         driver.get("https://www.google.com/");
+	    driver.navigate().to("https://the-internet.herokuapp.com/login")
+         WebElement usernameTxt = driver.findElement(By.id("username"));
+        usernameTxt.sendKeys("tomsmith");
+        WebElement passwordTxt = driver.findElement(By.id("password"));
+        passwordTxt.sendKeys("SuperSecretPassword!");
+        WebElement submitBtn = driver.findElement(By.className("radius"));
+        submitBtn.click();
+        System.out.println("Current URL is:" + driver.getCurrentUrl());
+        Assert.assertTrue(driver.getCurrentUrl().contains("secure"));
+	    //driver.get("https://www.google.com/");
 	/* driver.findElement(By.xpath("//*[@id=\"input\"]")).sendKeys("Facebook");
         Actions act = new Actions(driver);
         act.sendKeys(Keys.ENTER).build().perform();  */ 
