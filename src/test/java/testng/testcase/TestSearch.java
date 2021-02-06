@@ -47,7 +47,7 @@ public class TestSearch {
 
     @Test(priority = 1)
     public void tc_Search_1() {
-	    driver.navigate().to("https://the-internet.herokuapp.com/login")
+	    driver.navigate().to("https://the-internet.herokuapp.com/login");
          WebElement usernameTxt = driver.findElement(By.id("username"));
         usernameTxt.sendKeys("tomsmith");
         WebElement passwordTxt = driver.findElement(By.id("password"));
