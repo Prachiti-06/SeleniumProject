@@ -42,7 +42,7 @@ public class TestSearch {
         linkTest = new linkTest(driver);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
-        driver.get("https://www.ratioform.at/");
+        
     }
 
     @Test(priority = 1)
@@ -66,6 +66,7 @@ public class TestSearch {
 
     @Test(priority = 2)
     public void tc_Search_2() {
+	    driver.get("https://www.ratioform.at/");
         driver.findElement(By.name("searchQuery")).sendKeys("wellpapp");
        // driver.findElement(By.cssSelector("(button[type='submit']")).click();
          System.out.println("passed tc_search 2");
