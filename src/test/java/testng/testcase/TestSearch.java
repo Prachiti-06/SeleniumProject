@@ -57,28 +57,26 @@ public class TestSearch {
         System.out.println("Current URL is:" + driver.getCurrentUrl());
         Assert.assertTrue(driver.getCurrentUrl().contains("secure"));
 	    System.out.println("passed tc_search1");
-	    //driver.get("https://www.google.com/");
-	/* driver.findElement(By.xpath("//*[@id=\"input\"]")).sendKeys("Facebook");
-        Actions act = new Actions(driver);
-        act.sendKeys(Keys.ENTER).build().perform();  */ 
 	/*String productName = "wellpapp";
         search.searchproduct(productName);
         WebElement actual = driver.findElement(By.xpath("//div[@class='suggest-search__box']"));
         Assert.assertEquals(actual.getText().contains("Produkte"), true);
         search.getSearch().clear();*/
     }
-/*
+
     @Test(priority = 2)
     public void tc_Search_2() {
-        String productName = "wellpapp";
-        search.searchproduct(productName);
+        driver.findElement(By.name("searchQuery")).sendKeys("wellpapp");
+        driver.findElement(By.cssSelector("(button[type='submit']")).click();
+         System.out.println("passed tc_search2");
+	/*search.searchproduct(productName);
         driver.findElement(By.xpath(
                 "//html//body//div[2]//header-tag//div[2]//div[1]//div//div[1]//search-form//form//suggest-search//div//div//div//div//div[2]//a"))
                 .click();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.navigate().back();
+        driver.navigate().back();*/
     }
-
+/*
     @Test(priority = 3)
     public void tc_Search_3() {
         String productName = "wellpapp";
