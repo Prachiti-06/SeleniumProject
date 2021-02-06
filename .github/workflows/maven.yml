@@ -22,34 +22,6 @@ jobs:
         java-version: 1.8
    # - name: Build with Maven
    #   run: mvn -B package --file pom.xml
-    - name: pwd command
-      run: |
-        pwd
-        ls -lrt
-    - name: Install Google Chrome # Using shell script to install Google Chrome
-      run: |
-       set -ex
-       wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-       sudo apt install ./google-chrome-stable_current_amd64.deb
-       pwd
-       ls -lrt
-       cd ../..
-       cd /usr
-       ls -lrt
-       cd /bin
-       mkdir google-chrome
-       cd ../..
-       cd /home/runner/work/SeleniumProject_RF/SeleniumProject_RF
-       mv google-chrome-stable_current_amd64.deb /usr/bin/google-chrome
-       cd ../..
-       cd /usr/bin/google-chrome
-       ls -lrt
-    - name: pwd command2
-      run: |
-        cd ../..
-        cd /usr/local/bin
-        mkdir /chromedriver
-        pwd
     - uses: nanasess/setup-chromedriver@master
      # with:
     # Optional: do not specify to match Chrome's version
@@ -57,9 +29,5 @@ jobs:
     - run: |
         export DISPLAY=:99
         chromedriver --url-base=/wd/hub &
-        cd ../..
-        cd /usr/local/bin/chromedriver
-        pwd
-        ls -lrt
     - name: Run with Maven
       run: mvn test -Pselenium
