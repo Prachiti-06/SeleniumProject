@@ -57,18 +57,18 @@ public class TestSearch {
         System.out.println("Current URL is:" + driver.getCurrentUrl());
         Assert.assertTrue(driver.getCurrentUrl().contains("secure"));
 	    System.out.println("passed tc_search 1");
-	/*String productName = "wellpapp";
+	String productName = "wellpapp";
         search.searchproduct(productName);
         WebElement actual = driver.findElement(By.xpath("//div[@class='suggest-search__box']"));
         Assert.assertEquals(actual.getText().contains("Produkte"), true);
-        search.getSearch().clear();*/
+        search.getSearch().clear();
     }*/
 
     @Test(priority = 2)
     public void tc_Search_2() {
 	    driver.get("https://www.ratioform.at");
         driver.findElement(By.name("searchQuery")).sendKeys("wellpapp");
-       // driver.findElement(By.cssSelector("(button[type='submit']")).click();
+        driver.findElement(By.className("search-placeholder")).click();
          System.out.println("passed tc_search 2");
 	/*search.searchproduct(productName);
         driver.findElement(By.xpath(
