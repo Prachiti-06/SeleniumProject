@@ -12,7 +12,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v2
@@ -27,12 +27,12 @@ jobs:
     # Optional: do not specify to match Chrome's version
       #  chromedriver-version: '88.0.4324.96'
     - run: |
-        export DISPLAY=:99
-        #chromedriver --url-base=/wd/hub &
-    - name: Selenium setup
-      run: |
-        wget https://selenium-release.storage.googleapis.com/3.141/selenium-server-standalone-3.141.59.jar
+       # export DISPLAY=:99
         chromedriver --url-base=/wd/hub &
+   # - name: Selenium setup
+   #   run: |
+   #     wget https://selenium-release.storage.googleapis.com/3.141/selenium-server-standalone-3.141.59.jar
+   #     chromedriver --url-base=/wd/hub &
      #   xvfb-run java -Dwebdriver.chrome.driver=/usr/local/bin/chromedriver -jar selenium-server-standalone-3.141.59.jar
     - name: Run with Maven
       run: mvn test -Pselenium
