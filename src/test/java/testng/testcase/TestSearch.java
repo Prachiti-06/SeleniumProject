@@ -1,5 +1,6 @@
 package testng.testcase;
 
+/*
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -18,13 +19,13 @@ import org.testng.annotations.Test;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import pageobject.Search;
+import pageobject.Search;*/
 
 /**
  * @author Prachiti
  */
 public class TestSearch {
-    WebDriver driver;
+  /*  WebDriver driver;
     Search search;
     testng.testcase.linkTest linkTest;
 
@@ -33,7 +34,7 @@ public class TestSearch {
         //System.setProperty("webdriver.chrome.driver", "C:\\chromewebdriver\\chromedriver.exe");
 	  
 	WebDriverManager.chromedriver().setup();
-	            ChromeOptions chromeOptions = new ChromeOptions();
+	ChromeOptions chromeOptions = new ChromeOptions();
          chromeOptions.addArguments("--headless");
          chromeOptions.addArguments("--no-sandbox");
          chromeOptions.addArguments("--disable-dev-shm-usage");
@@ -42,42 +43,29 @@ public class TestSearch {
         linkTest = new linkTest(driver);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
+	driver.get("https://www.ratioform.at");
         
     }
 
- /*   @Test(priority = 1)
+    @Test(priority = 1)
     public void tc_Search_1() {
-	    driver.navigate().to("https://the-internet.herokuapp.com/login");
-         WebElement usernameTxt = driver.findElement(By.xpath("//*[@id='username']"));
-        usernameTxt.sendKeys("tomsmith");
-        WebElement passwordTxt = driver.findElement(By.id("password"));
-        passwordTxt.sendKeys("SuperSecretPassword!");
-        WebElement submitBtn = driver.findElement(By.className("radius"));
-        submitBtn.click();
-        System.out.println("Current URL is:" + driver.getCurrentUrl());
-        Assert.assertTrue(driver.getCurrentUrl().contains("secure"));
-	    System.out.println("passed tc_search 1");
 	String productName = "wellpapp";
         search.searchproduct(productName);
         WebElement actual = driver.findElement(By.xpath("//div[@class='suggest-search__box']"));
         Assert.assertEquals(actual.getText().contains("Produkte"), true);
         search.getSearch().clear();
-    }*/
+    }
 
     @Test(priority = 2)
     public void tc_Search_2() {
-	    driver.get("https://www.ratioform.at");
-       // driver.findElement(By.name("searchQuery")).sendKeys("wellpapp");
-        driver.findElement(By.className("search-placeholder")).click();
-         System.out.println("passed tc_search 2");
-	/*search.searchproduct(productName);
+	search.searchproduct(productName);
         driver.findElement(By.xpath(
                 "//html//body//div[2]//header-tag//div[2]//div[1]//div//div[1]//search-form//form//suggest-search//div//div//div//div//div[2]//a"))
                 .click();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.navigate().back();*/
+        driver.navigate().back();
     }
-/*
+
     @Test(priority = 3)
     public void tc_Search_3() {
         String productName = "wellpapp";
@@ -189,10 +177,10 @@ public class TestSearch {
         search.searchproduct(productName);
         int actual = (driver.findElements(By.xpath("//div[@class='suggestion-product']")).size());
         Assert.assertEquals(actual, 5);
-    }*/
+    }
 
 	@AfterClass
 	public void afterClass() {
 		driver.quit();
-	}
+	}*/
 }
