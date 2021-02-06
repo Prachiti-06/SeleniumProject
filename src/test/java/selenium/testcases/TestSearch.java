@@ -10,9 +10,9 @@ public class TestSearch {
 
         System.out.println("start Testing...");
         testCases.setup();
-        testCases.tc_Search_1();
-        /*testCases.tc_Search_2();
-        testCases.tc_Search_3();
+       // testCases.tc_Search_1();
+        testCases.tc_Search_2();
+       /* testCases.tc_Search_3();
         testCases.tc_Search_4();
         testCases.tc_Search_5();
         testCases.tc_Search_6();
