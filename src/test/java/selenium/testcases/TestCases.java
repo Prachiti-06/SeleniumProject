@@ -128,7 +128,9 @@ public class TestCases {
      * Verify that placeholder should be there in search box for unserstanding what to search in serach box.
      */
     public void tc_Search_7() {
-        String placeholder = search.getPlaceholder().getAttribute("placeholder");
+        WebElement placeholderEle = driver.findElement(By.xpath("//input[@placeholder='Suchbegriff, Produktname, Artikelnummer...']"));
+        String placeholder = placeholderEle.getAttribute("placeholder");
+        //        String placeholder = search.getPlaceholder().getAttribute("placeholder");
         String actplaceholder = "Suchbegriff, Produktname, Artikelnummer...";
         AssertUtils.assertEquals(placeholder.contains(actplaceholder), true);
     }
