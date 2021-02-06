@@ -45,7 +45,7 @@ public class TestSearch {
         
     }
 
-    @Test(priority = 1)
+ /*   @Test(priority = 1)
     public void tc_Search_1() {
 	    driver.navigate().to("https://the-internet.herokuapp.com/login");
          WebElement usernameTxt = driver.findElement(By.xpath("//*[@id='username']"));
@@ -62,11 +62,11 @@ public class TestSearch {
         WebElement actual = driver.findElement(By.xpath("//div[@class='suggest-search__box']"));
         Assert.assertEquals(actual.getText().contains("Produkte"), true);
         search.getSearch().clear();*/
-    }
+    }*/
 
     @Test(priority = 2)
     public void tc_Search_2() {
-	    driver.get("https://www.ratioform.at/");
+	    driver.get("https://www.ratioform.at");
         driver.findElement(By.name("searchQuery")).sendKeys("wellpapp");
        // driver.findElement(By.cssSelector("(button[type='submit']")).click();
          System.out.println("passed tc_search 2");
