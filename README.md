@@ -22,4 +22,4 @@ To use this project, need to install the following applications:
 
 ## Command Required to run the Automation test
 1. Using Selenium : `mvn test -Pselenium`
-2. Using TestNG : `mvn test`
+2. Using TestNG : `mvn test` 
