@@ -17,14 +17,14 @@ public class Search {
     @FindBy(name = "searchQuery")
     WebElement search;
 
-    @FindBy(xpath = "//button[@class=' button button--expand search-form__submit']")
+    @FindBy(css = "(button[type='submit']")
     WebElement searchButton;
 
     @FindBy(xpath = "//div[@class='suggest-search__box']")
     WebElement productList;
 
-    @FindBy(xpath = "//html//body//div[2]//header-tag//div[2]//div[1]//div//div[1]//search-form//form//suggest-search//div//div//div//div//div[2]//a")
-    WebElement productDetails;
+    @FindBy(css = "input[placeholder='Suchbegriff, Produktname, Artikelnummer...']")
+    WebElement placeholder;
 
     @FindBy(xpath = "//div[@class='sort']")
     WebElement keyButton;
@@ -32,14 +32,15 @@ public class Search {
     @FindAll({ @FindBy(xpath = "//span[@class='suggestion-product__name']") })
     List<WebElement> searchExactMatch;
 
-    @FindBy(xpath = "//input[@placeholder='Suchbegriff, Produktname, Artikelnummer...']")
-    WebElement placeholder;
-
     @FindBy(xpath = "//html//body//div[2]//header-tag//div[2]//div[1]//div//div[1]//search-form//form//suggest-search//div//div//div//div//div[6]//button")
     WebElement showAllButton;
 
     @FindAll({ @FindBy(xpath = "//div[@class='suggestion-product']") })
     List<WebElement> autoSuggestionCounts;
+
+    @FindBy(xpath = "//html//body//div[2]//header-tag//div[2]//div[1]//div//div[1]//search-form//form//suggest-search//div//div//div//div//div[2]//a")
+    WebElement productDetails;
+
 
     String productName;
 

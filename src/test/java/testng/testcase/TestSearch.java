@@ -1,6 +1,6 @@
 package testng.testcase;
 
-/*import java.util.Iterator;
+import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -15,37 +15,52 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import pageobject.Search;*/
+import io.github.bonigarcia.wdm.WebDriverManager;
+import pageobject.Search;
 
 /**
  * @author Prachiti
  */
 public class TestSearch {
-   /* WebDriver driver;
+    WebDriver driver;
     Search search;
     testng.testcase.linkTest linkTest;
 
     @BeforeTest
     public void setup() {
-        System.setProperty("webdriver.chrome.driver", "C:\\chromewebdriver\\chromedriver.exe");
+        //System.setProperty("webdriver.chrome.driver", "C:\\chromewebdriver\\chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         search = new Search(driver);
         linkTest = new linkTest(driver);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.get("https://www.ratioform.at/");
-    }
+    }/*
+     @Test
+     public void google(){
+         driver.get("");
+        driver.findElement(By.name("email")).sendKeys("abc@123");
+        driver.findElement(By.name("pass")).sendKeys("123456");
+        driver.findElement(By.name("login")).click();
 
+
+     }
+*/
     @Test(priority = 1)
     public void tc_Search_1() {
-        String productName = "wellpapp";
+        /*String productName = "wellpapp";
         search.searchproduct(productName);
         WebElement actual = driver.findElement(By.xpath("//div[@class='suggest-search__box']"));
         Assert.assertEquals(actual.getText().contains("Produkte"), true);
-        search.getSearch().clear();
+        search.getSearch().clear();*/
+        driver.get("https://www.ratioform.at/");
+        driver.findElement(By.name("searchQuery")).sendKeys("wellpapp");
+        driver.findElement(By.className("search-placeholder")).click();
+
     }
 
-    @Test(priority = 2)
+  /*  @Test(priority = 2)
     public void tc_Search_2() {
         String productName = "wellpapp";
         search.searchproduct(productName);
@@ -168,10 +183,10 @@ public class TestSearch {
         search.searchproduct(productName);
         int actual = (driver.findElements(By.xpath("//div[@class='suggestion-product']")).size());
         Assert.assertEquals(actual, 5);
-    }
+    }*/
 
 	@AfterClass
 	public void afterClass() {
-		driver.close();
-	}*/
+		driver.quit();
+	}
 }

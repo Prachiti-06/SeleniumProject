@@ -11,6 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import pageobject.Search;
 import selenium.testcases.utils.AssertUtils;
 
@@ -18,14 +19,14 @@ public class TestCases {
     WebDriver driver;
     Search search;
     selenium.testcases.linkTest linkTest;
-
     TestSearch testSearch = new TestSearch();
 
     String productName ;
 
     /* to open ratioform website on Chrome driver*/
     public void setup() {
-        System.setProperty("webdriver.chrome.driver", "C:\\chromewebdriver\\chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
+     //   System.setProperty("webdriver.chrome.driver", "C:\\chromewebdriver\\chromedriver.exe");
         driver = new ChromeDriver();
         search = new Search(driver);
         linkTest = new linkTest(driver);
@@ -33,6 +34,9 @@ public class TestCases {
         driver.manage().window().maximize();
         driver.get("https://www.ratioform.at/");
         productName = search.getProductName();
+        System.out.println(productName);
+        System.out.println(search.toString());
+        System.out.println(search.getSearch().getText());
     }
 
     /**
@@ -77,13 +81,13 @@ public class TestCases {
         Actions act = new Actions(driver);
         act.sendKeys(Keys.ENTER).build().perform();
         String actualmsg = search.getKeyButton().getText();
-        String expect = "75 Produkte gefunden";
+        String expect = "74 Produkte gefunden";
         AssertUtils.assertEquals(actualmsg.contains(expect), true);
         driver.navigate().back();
 
     }
 
-    /**
+    /**productDetails
      * "Verify that after hiting the clicking the search button with mouse
      * on result ,should get display."
      */
@@ -116,6 +120,8 @@ public class TestCases {
      * Verify that placeholder should be there in search box for unserstanding what to search in serach box.
      */
     public void tc_Search_7() {
+        //WebElement placeholderEle = driver.findElement(By.xpath("//input[@placeholder='Suchbegriff, Produktname, Artikelnummer...']"));
+        //String placeholder = placeholderEle.getAttribute("placeholder");
         String placeholder = search.getPlaceholder().getAttribute("placeholder");
         String actplaceholder = "Suchbegriff, Produktname, Artikelnummer...";
         AssertUtils.assertEquals(placeholder.contains(actplaceholder), true);
