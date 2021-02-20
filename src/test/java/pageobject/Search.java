@@ -41,7 +41,6 @@ public class Search {
     @FindBy(xpath = "//html//body//div[2]//header-tag//div[2]//div[1]//div//div[1]//search-form//form//suggest-search//div//div//div//div//div[2]//a")
     WebElement productDetails;
 
-
     String productName;
 
     public Search(WebDriver driver) {
@@ -94,7 +93,7 @@ public class Search {
         return autoSuggestionCounts;
     }
 
-    public String getProductName(){
+    public String getProductName() {
         return productName;
     }
 }

@@ -9,6 +9,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -21,22 +22,20 @@ public class TestCases {
     selenium.testcases.linkTest linkTest;
     TestSearch testSearch = new TestSearch();
 
-    String productName ;
+    String productName;
 
     /* to open ratioform website on Chrome driver*/
     public void setup() {
         WebDriverManager.chromedriver().setup();
-     //   System.setProperty("webdriver.chrome.driver", "C:\\chromewebdriver\\chromedriver.exe");
-        driver = new ChromeDriver();
+        ChromeOptions chromeOptions = new ChromeOptions();
+        driver = new ChromeDriver(chromeOptions);
         search = new Search(driver);
         linkTest = new linkTest(driver);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.get("https://www.ratioform.at/");
         productName = search.getProductName();
-        System.out.println(productName);
-        System.out.println(search.toString());
-        System.out.println(search.getSearch().getText());
+
     }
 
     /**
@@ -84,10 +83,10 @@ public class TestCases {
         String expect = "74 Produkte gefunden";
         AssertUtils.assertEquals(actualmsg.contains(expect), true);
         driver.navigate().back();
-
     }
 
-    /**productDetails
+    /**
+     * productDetails
      * "Verify that after hiting the clicking the search button with mouse
      * on result ,should get display."
      */
@@ -120,8 +119,6 @@ public class TestCases {
      * Verify that placeholder should be there in search box for unserstanding what to search in serach box.
      */
     public void tc_Search_7() {
-        //WebElement placeholderEle = driver.findElement(By.xpath("//input[@placeholder='Suchbegriff, Produktname, Artikelnummer...']"));
-        //String placeholder = placeholderEle.getAttribute("placeholder");
         String placeholder = search.getPlaceholder().getAttribute("placeholder");
         String actplaceholder = "Suchbegriff, Produktname, Artikelnummer...";
         AssertUtils.assertEquals(placeholder.contains(actplaceholder), true);
@@ -192,6 +189,6 @@ public class TestCases {
     }
 
     public void afterClass() {
-        driver.close();
+        driver.quit();
     }
 }

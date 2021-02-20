@@ -24,10 +24,9 @@ public class linkTest {
         this.driver = driver;
     }
 
-/**
-     *  To check each autosuggestion urls
-     *//**/
-
+    /**
+     * To check each autosuggestion urls
+     */
     public void urlTestCase() {
         List<WebElement> searchTags = driver.findElements(By.xpath("//div[@class='suggestion-product']"));
         Iterator itr = searchTags.iterator();
@@ -41,7 +40,6 @@ public class linkTest {
     }
 
     /*
-*//*
      * To open http connection and receive the response header
      */
 
